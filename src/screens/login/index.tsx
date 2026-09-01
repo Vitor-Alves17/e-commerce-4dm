@@ -1,4 +1,5 @@
 import {View, Image, Text, TextInput, TouchableOpacity} from "react-native";
+// @ts-ignore
 import logo from '../../assets/logotipo.png'
 import {styles} from "./style";
 

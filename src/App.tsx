@@ -1,13 +1,6 @@
-import {Button, Text, TextInput, Image, Pressable, TouchableOpacity, Animated} from 'react-native';
 import {SafeAreaView} from "react-native-safe-area-context";
-import Frieren from './assets/frieren-winter-mountain-anime-wallpaper-4k-card.webp'
-import {Card} from "./components/Card";
-import {Header} from "./components/Header";
-import {Main} from "./components/Main";
-import {Footer} from "./components/Footer";
-import {styles} from "./components/Card/style";
-import ScrollView = Animated.ScrollView;
-import {Login} from "./screens/login";
+import {Signup} from "./screens/signup";
+import {Home} from "./screens/Home";
 
 export default function App() {
     const Lucas = () => {
@@ -51,7 +44,10 @@ export default function App() {
        {/*    <Footer/>*/}
        {/*</ScrollView>*/}
 
-       <Login/>
+       {/*<Login/>*/}
+
+       {/*<Signup />*/}
+       <Home/>
    </SafeAreaView>
   );
 }
