@@ -5,6 +5,9 @@ import logo from "../../assets/logo-tipo.png"
 import destaque from '../../assets/destaque1.png'
 import destaque2 from '../../assets/destaque2.png'
 import destaque3 from '../../assets/destaque3.png'
+import {CategorySection} from "../../components/CategorySection";
+import {ProductionSection} from "../../components/ProductionSection";
+
 
 export const Home = () => {
     return (
@@ -21,7 +24,12 @@ export const Home = () => {
                 <Image source={destaque3} />
             </Scroll>
 
-            <TitleHighlight>Nossas <TextHighlight>Categorias</TextHighlight></TitleHighlight>
+            {/*<TitleHighlight>Nossas <TextHighlight>Categorias</TextHighlight></TitleHighlight>*/}
+
+            <CategorySection/>
+
+            S
+            <ProductionSection/>
 
         </Container>
     )

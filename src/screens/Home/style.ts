@@ -21,7 +21,3 @@ export const Scroll = styled.ScrollView.attrs({
         gap: 20
     }
 })``
-
-export const Scrollcategory = styled.ScrollView.attrs({
-
-})

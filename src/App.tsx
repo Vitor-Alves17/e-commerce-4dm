@@ -1,5 +1,5 @@
 import {SafeAreaView} from "react-native-safe-area-context";
-import {Signup} from "./screens/signup";
+import {Signup} from "./screens/Signup";
 import {Home} from "./screens/Home";
 
 export default function App() {
