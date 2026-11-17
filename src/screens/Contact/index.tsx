@@ -1,7 +1,9 @@
 import {Alert, Image} from "react-native";
 import logo from "../../assets/logo-tipo.png";
 import map from "../../assets/map.png";
+import {BackToHome} from "../../components/BackToHome";
 import {Screen} from "../../components/Screen";
+import type {RootStackScreenProps} from "../../navigation/types";
 import {
     BtnText,
     ContactContainer,
@@ -16,10 +18,12 @@ import {
     Title,
 } from "./style";
 
-export const Contact = () => {
+export const Contact = ({navigation}: RootStackScreenProps<"Contact">) => {
     return (
         <Screen>
             <ContactContainer>
+                <BackToHome onPress={() => navigation.navigate("Home")}/>
+
                 <Image source={logo}/>
 
                 <FormContainer>

@@ -6,10 +6,21 @@ import destaque3 from "../../assets/destaque3.png";
 import {CategorySection} from "../../components/CategorySection";
 import {ProductionSection} from "../../components/ProductionSection";
 import {Screen} from "../../components/Screen";
-import type {MainTabScreenProps} from "../../navigation/types";
-import {Container, HighlightSection, Scroll, TextHighlight, TitleHighlight} from "./style";
+import type {RootStackScreenProps} from "../../navigation/types";
+import {
+    Actions,
+    Container,
+    HighlightSection,
+    PrimaryButton,
+    PrimaryButtonText,
+    Scroll,
+    SecondaryButton,
+    SecondaryButtonText,
+    TextHighlight,
+    TitleHighlight,
+} from "./style";
 
-export const Home = ({navigation}: MainTabScreenProps<"Home">) => {
+export const Home = ({navigation}: RootStackScreenProps<"Home">) => {
     return (
         <Screen>
             <Container>
@@ -30,6 +41,16 @@ export const Home = ({navigation}: MainTabScreenProps<"Home">) => {
                 <CategorySection onSelect={() => navigation.navigate("Products")}/>
 
                 <ProductionSection/>
+
+                <Actions>
+                    <PrimaryButton onPress={() => navigation.navigate("Products")}>
+                        <PrimaryButtonText>Ver todos os produtos</PrimaryButtonText>
+                    </PrimaryButton>
+
+                    <SecondaryButton onPress={() => navigation.navigate("Contact")}>
+                        <SecondaryButtonText>Fale conosco</SecondaryButtonText>
+                    </SecondaryButton>
+                </Actions>
             </Container>
         </Screen>
     );

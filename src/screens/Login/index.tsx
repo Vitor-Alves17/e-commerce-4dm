@@ -41,7 +41,12 @@ export const Login = ({navigation}: RootStackScreenProps<"Login">) => {
 
                     <TouchableOpacity
                         style={styles.button}
-                        onPress={() => navigation.replace("Main")}
+                        onPress={() =>
+                            navigation.reset({
+                                index: 0,
+                                routes: [{name: "Home"}],
+                            })
+                        }
                     >
                         <Text style={styles.buttonText}>Entrar</Text>
                     </TouchableOpacity>

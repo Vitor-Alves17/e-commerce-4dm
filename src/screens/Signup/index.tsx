@@ -54,7 +54,14 @@ export const Signup = ({navigation}: RootStackScreenProps<"Signup">) => {
                         />
                     </InputContainer>
 
-                    <FormButton onPress={() => navigation.replace("Main")}>
+                    <FormButton
+                        onPress={() =>
+                            navigation.reset({
+                                index: 0,
+                                routes: [{name: "Home"}],
+                            })
+                        }
+                    >
                         <TextButton>Criar conta</TextButton>
                     </FormButton>
                 </FormContainer>

@@ -10,7 +10,7 @@ interface ScreenProps {
 
 export const Screen = ({children, scroll = true, contentContainerStyle}: ScreenProps) => {
     return (
-        <SafeAreaView style={styles.safeArea} edges={["top", "left", "right"]}>
+        <SafeAreaView style={styles.safeArea} edges={["top", "bottom", "left", "right"]}>
             {scroll ? (
                 <ScrollView
                     contentContainerStyle={contentContainerStyle}
