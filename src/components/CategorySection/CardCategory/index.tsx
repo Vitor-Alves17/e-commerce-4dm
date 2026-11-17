@@ -1,17 +1,17 @@
-import {Name, Viiew} from "./style";
-import {styles} from "../../Card/style";
-import {ImageSourcePropType, Image} from "react-native";
+import {Image, type ImageSourcePropType} from "react-native";
+import {CardContainer, Name} from "./style";
 
 interface Props {
     name: string;
     image: ImageSourcePropType;
+    onPress?: () => void;
 }
 
-export const CardCategory = (props: Props) => {
+export const CardCategory = ({name, image, onPress}: Props) => {
     return (
-        <Viiew>
-            <Image source={props.image}/>
-            <Name>{props.name}</Name>
-        </Viiew>
-    )
-}
+        <CardContainer onPress={onPress}>
+            <Image source={image}/>
+            <Name>{name}</Name>
+        </CardContainer>
+    );
+};

@@ -1,22 +1,27 @@
-import {TextHighlight, TextTitle, ContainerCategory, Scroll} from "./style";
 import {CardCategory} from "./CardCategory";
-import JogoI from '../../assets/icons-j.png'
-import EletroI from '../../assets/icon-e.png'
-import CamisetasI from '../../assets/icons-c.png'
-import TenisI from '../../assets/icon-t.png'
+import JogoI from "../../assets/icons-j.png";
+import EletroI from "../../assets/icon-e.png";
+import CamisetasI from "../../assets/icons-c.png";
+import TenisI from "../../assets/icon-t.png";
+import {ContainerCategory, Scroll, TextHighlight, TextTitle} from "./style";
 
-export const CategorySection = () => {
-    return(
+interface Props {
+    onSelect?: () => void;
+}
+
+export const CategorySection = ({onSelect}: Props) => {
+    return (
         <ContainerCategory>
-            <TextTitle>Nossas <TextHighlight>Categorias</TextHighlight></TextTitle>
+            <TextTitle>
+                Nossas <TextHighlight>Categorias</TextHighlight>
+            </TextTitle>
 
             <Scroll horizontal={true} showsHorizontalScrollIndicator={false}>
-                <CardCategory name={'Tênis'} image={TenisI}/>
-                <CardCategory name={'Eletronicos'} image={EletroI}/>
-                <CardCategory name={'Camisetas'} image={CamisetasI}/>
-                <CardCategory name={'Jogos'} image={JogoI}/>
+                <CardCategory name="Tênis" image={TenisI} onPress={onSelect}/>
+                <CardCategory name="Eletrônicos" image={EletroI} onPress={onSelect}/>
+                <CardCategory name="Camisetas" image={CamisetasI} onPress={onSelect}/>
+                <CardCategory name="Jogos" image={JogoI} onPress={onSelect}/>
             </Scroll>
-            {/*<CardCategory name={'Eletrodomésticos'} image={}/>*/}
         </ContainerCategory>
-    )
-}
+    );
+};

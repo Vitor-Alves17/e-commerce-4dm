@@ -1,40 +1,69 @@
 import {StyleSheet} from "react-native";
 
 export const styles = StyleSheet.create({
+    container: {
+        flexGrow: 1,
+        justifyContent: "center",
+        gap: 32,
+        padding: 20,
+    },
+    logoWrapper: {
+        flexDirection: "row",
+        alignItems: "center",
+        gap: 10,
+    },
+    logoText: {
+        color: "#191C1E",
+        fontSize: 25,
+        fontWeight: "bold",
+    },
     title: {
-       color: '#2D3133',
-        fontSize: 40,
-        fontWeight: 'bold',
+        color: "#2D3133",
+        fontSize: 36,
+        fontWeight: "bold",
     },
     titleBlue: {
-        color: '#375EE7',
-        fontSize: 40,
-        fontWeight: 'bold',
+        color: "#375EE7",
     },
-    logo: {
-        color: '#191C1E',
-        fontSize: 25,
-        fontWeight: 'bold',
+    form: {
+        width: "100%",
+        gap: 20,
     },
-    logowrapper: {
-        flexDirection: 'row',
+    field: {
+        gap: 6,
+    },
+    label: {
+        color: "#2D3133",
+        fontSize: 16,
     },
     input: {
         borderWidth: 1,
-        borderColor: 'black',
+        borderColor: "#C9CDD4",
         borderRadius: 7,
-        width: 400,
-        height: 63,
+        height: 56,
+        paddingHorizontal: 14,
+        fontSize: 16,
     },
     button: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderWidth: 1,
-        borderColor: 'black',
+        alignItems: "center",
+        justifyContent: "center",
         borderRadius: 7,
-        width: 400,
-        height: 63,
-        backgroundColor: '#375EE7'
-    }
-})
+        height: 56,
+        marginTop: 10,
+        backgroundColor: "#375EE7",
+    },
+    buttonText: {
+        color: "#FFFFFF",
+        fontSize: 18,
+        fontWeight: "bold",
+    },
+    footerText: {
+        textAlign: "center",
+        color: "#2D3133",
+        fontSize: 16,
+    },
+    link: {
+        color: "#375EE7",
+        fontWeight: "bold",
+    },
+});

@@ -3,9 +3,12 @@ import styled from "styled-components/native";
 export const CardBody = styled.View`
     flex-direction: column;
     align-items: center;
-    border: 1px solid black;
-    width: 190px;
-    height: 229px;
+    width: 48%;
+    min-height: 229px;
+    overflow: hidden;
+    border: 1px solid #E5E7EB;
+    border-radius: 7px;
+    background-color: #FFFFFF;
 `
 
 export const Title = styled.Text`
@@ -17,24 +20,30 @@ export const Price = styled.Text`
     color: #375ee7;
     font-weight: 700;
 `
+
 export const Content = styled.View`
     flex-direction: column;
-    padding: 10px;
     gap: 10px;
+    padding: 10px;
 `
 
 export const Sell = styled.View`
     flex-direction: row;
-    gap: 39px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
 `
 
 export const Buttone = styled.TouchableOpacity`
-    background-color: #375ee7;
     align-items: center;
     justify-content: center;
-    border-radius: 30px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: #375ee7;
 `
+
 export const Img = styled.Image`
-    width: 188px;
+    width: 100%;
     height: 111px;
 `
