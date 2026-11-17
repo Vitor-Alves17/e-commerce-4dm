@@ -1,27 +1,26 @@
+import {Image, Text} from "react-native";
 import {Buttone, CardBody, Content, Img, Price, Sell, Title} from "./style";
-import {ImageSourcePropType, Image} from "react-native";
-import buttonI from '../../../assets/button-add.png'
-
+import buttonI from "../../../assets/button-add.png";
 
 interface ICard {
     title: string;
     price: string;
-    image: ImageSourcePropType;
+    image: string;
 }
 
 export const ProductionCard = (props: ICard) => {
     return (
         <CardBody>
-            <Img source={props.image} />
+            <Img source={{uri: props.image}} resizeMode="contain"/>
             <Content>
-                <Title>{props.title}</Title>
+                <Title numberOfLines={2}>{props.title}</Title>
                 <Sell>
                     <Price>{props.price}</Price>
-                    <Buttone>
+                    <Buttone accessibilityRole="button" accessibilityLabel="Adicionar ao carrinho">
                         <Image source={buttonI}/>
                     </Buttone>
                 </Sell>
             </Content>
         </CardBody>
-    )
-}
+    );
+};

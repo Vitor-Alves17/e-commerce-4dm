@@ -1,12 +1,6 @@
 import {useState} from "react";
-import axios from "axios";
 import {Pressable, Text, View} from "react-native";
-
-interface Product {
-    id: number;
-    title: string;
-    price: number;
-}
+import {getProducts, type Product} from "../../services/products";
 
 export const Apitest = () => {
     const [products, setProducts] = useState<Product[]>([]);
@@ -18,8 +12,8 @@ export const Apitest = () => {
             setLoading(true);
             setError(null);
 
-            const response = await axios.get<Product[]>("https://fakestoreapi.com/products");
-            setProducts(response.data);
+            const data = await getProducts();
+            setProducts(data);
         } catch {
             setError("Não foi possível carregar os produtos.");
         } finally {
@@ -37,7 +31,7 @@ export const Apitest = () => {
 
             {products.map((product) => (
                 <Text key={product.id}>
-                    {product.title} - R$ {product.price.toFixed(2)}
+                    {product.title} - US$ {product.price.toFixed(2)}
                 </Text>
             ))}
         </View>

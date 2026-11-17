@@ -1,23 +1,29 @@
-import cardImage from "../../assets/card-i.png";
+import {useProducts} from "../../contexts/ProductsContext";
 import {ProductionCard} from "./CardProduction";
-import {BoxProduct, ContainerProducts, EmptyText, TextHighlight, TextTitle} from "./style";
-
-const PRODUCTS = [
-    {id: "1", title: "Camiseta Básica", price: "R$ 79,90"},
-    {id: "2", title: "Tênis Esportivo", price: "R$ 299,90"},
-    {id: "3", title: "Fone Bluetooth", price: "R$ 149,90"},
-    {id: "4", title: "Controle Gamer", price: "R$ 199,90"},
-];
+import {
+    BoxProduct,
+    ContainerProducts,
+    EmptyText,
+    ErrorText,
+    RetryButton,
+    RetryText,
+    TextHighlight,
+    TextTitle,
+} from "./style";
 
 interface Props {
     search?: string;
 }
 
+const formatPrice = (price: number) => `US$ ${price.toFixed(2).replace(".", ",")}`;
+
 export const ProductionSection = ({search = ""}: Props) => {
+    const {products, loading, error, reload} = useProducts();
+
     const term = search.trim().toLowerCase();
-    const products = term
-        ? PRODUCTS.filter((product) => product.title.toLowerCase().includes(term))
-        : PRODUCTS;
+    const filteredProducts = term
+        ? products.filter((product) => product.title.toLowerCase().includes(term))
+        : products;
 
     return (
         <BoxProduct>
@@ -25,16 +31,29 @@ export const ProductionSection = ({search = ""}: Props) => {
                 Nossos <TextHighlight>Produtos</TextHighlight>
             </TextTitle>
 
-            {products.length === 0 ? (
+            {loading && <EmptyText>Carregando produtos...</EmptyText>}
+
+            {!loading && error && (
+                <>
+                    <ErrorText>{error}</ErrorText>
+                    <RetryButton onPress={reload}>
+                        <RetryText>Tentar novamente</RetryText>
+                    </RetryButton>
+                </>
+            )}
+
+            {!loading && !error && filteredProducts.length === 0 && (
                 <EmptyText>Nenhum produto encontrado.</EmptyText>
-            ) : (
+            )}
+
+            {!loading && !error && filteredProducts.length > 0 && (
                 <ContainerProducts>
-                    {products.map((product) => (
+                    {filteredProducts.map((product) => (
                         <ProductionCard
                             key={product.id}
                             title={product.title}
-                            price={product.price}
-                            image={cardImage}
+                            price={formatPrice(product.price)}
+                            image={product.image}
                         />
                     ))}
                 </ContainerProducts>

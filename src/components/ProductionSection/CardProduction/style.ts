@@ -12,7 +12,7 @@ export const CardBody = styled.View`
 `
 
 export const Title = styled.Text`
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
 `
 
@@ -23,6 +23,7 @@ export const Price = styled.Text`
 
 export const Content = styled.View`
     flex-direction: column;
+    align-self: stretch;
     gap: 10px;
     padding: 10px;
 `
@@ -46,4 +47,5 @@ export const Buttone = styled.TouchableOpacity`
 export const Img = styled.Image`
     width: 100%;
     height: 111px;
+    background-color: #FFFFFF;
 `
